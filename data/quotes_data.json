@@ -1,0 +1,659 @@
+[
+  {
+    "quote_id": "1",
+    "quote_text": "Identity is a prison you can never escape, but the way to redeem your past is not to run from it, but to try to understand it, and use it as a foundation to grow.",
+    "source_type": "Book",
+    "author": "Jay-Z",
+    "source_title": "Decoded",
+    "is_pinned": "false",
+    "topic_ids": "1.4, 2.4, 5.4, 5.5"
+  },
+  {
+    "quote_id": "2",
+    "quote_text": "Good news is you came a long way, bad news is you went the wrong way.",
+    "source_type": "Rap Song",
+    "author": "J. Cole",
+    "source_title": "Love Yourz",
+    "is_pinned": "false",
+    "topic_ids": "1.4, 5.5"
+  },
+  {
+    "quote_id": "3",
+    "quote_text": "The cost of something is the amount of life you give up for it.",
+    "source_type": "Book",
+    "author": "Henry David Thoreau",
+    "source_title": "Walden",
+    "is_pinned": "false",
+    "topic_ids": "3.2, 3.1"
+  },
+  {
+    "quote_id": "4",
+    "quote_text": "Forward momentum, as long as there is imagination left.",
+    "source_type": "Other Person",
+    "author": "Walt Disney",
+    "source_title": "BLANK",
+    "is_pinned": "false",
+    "topic_ids": "1.1, 2.1"
+  },
+  {
+    "quote_id": "5",
+    "quote_text": "I feel strange every day like something 'bout to happen bad. Prepared for the worst, anticipate the best. I think positive, but my thoughts have undertones. I do my best to keep it balanced, but it thunder rolls.",
+    "source_type": "Rap Song",
+    "author": "Mobb Deep",
+    "source_title": "Score Points",
+    "is_pinned": "false",
+    "topic_ids": "2.2, 2.5, 2.4, 1.3"
+  },
+  {
+    "quote_id": "6",
+    "quote_text": "If this is rich then take me back to being broke and bummy.",
+    "source_type": "Rap Song",
+    "author": "Russ",
+    "source_title": "Oasis",
+    "is_pinned": "false",
+    "topic_ids": "3.2, 4.3"
+  },
+  {
+    "quote_id": "7",
+    "quote_text": "Tough people last, tough times don't.",
+    "source_type": "Rap Song",
+    "author": "Nas",
+    "source_title": "What This All Really Means",
+    "is_pinned": "false",
+    "topic_ids": "2.1, 3.1"
+  },
+  {
+    "quote_id": "8",
+    "quote_text": "How you take them losses and keep pushin' forward? I keep a chin up like a boy in front me.",
+    "source_type": "Rap Song",
+    "author": "Sheff G",
+    "source_title": "Captions",
+    "is_pinned": "false",
+    "topic_ids": "2.1, 1.1, 5.5"
+  },
+  {
+    "quote_id": "9",
+    "quote_text": "Become who you want, don't be a slave to the person you were.",
+    "source_type": "Rap Song",
+    "author": "Russ",
+    "source_title": "Put You On The Game",
+    "is_pinned": "false",
+    "topic_ids": "1.5, 1.4, 5.4"
+  },
+  {
+    "quote_id": "10",
+    "quote_text": "The older you get, the more expensive lessons will be.",
+    "source_type": "Rap Song",
+    "author": "Russ",
+    "source_title": "I'm Here",
+    "is_pinned": "false",
+    "topic_ids": "5.5, 4.4, 3.1"
+  },
+  {
+    "quote_id": "11",
+    "quote_text": "Yeah, you wished for it, me, I worked for it.",
+    "source_type": "Rap Song",
+    "author": "Russ",
+    "source_title": "Me You",
+    "is_pinned": "false",
+    "topic_ids": "1.1, 3.1, 3.3"
+  },
+  {
+    "quote_id": "12",
+    "quote_text": "Don't try to change the world, find something that you love and do it every day. Do that for the rest of your life, and eventually, the world will change.",
+    "source_type": "Rap Song",
+    "author": "Macklemore",
+    "source_title": "Growing Up (Sloane's Song)",
+    "is_pinned": "false",
+    "topic_ids": "1.5, 1.2, 4.3, 1.1"
+  },
+  {
+    "quote_id": "13",
+    "quote_text": "Just because you don't got a big chain doesn't mean you don't gotta feel like you ain't got a big chain. Having a big chain is a feeling. You gon' wake up in the morning and feel good and feel like you got a big chain.",
+    "source_type": "Rap Song",
+    "author": "N.O.R.E.",
+    "source_title": "Big Chain",
+    "is_pinned": "false",
+    "topic_ids": "1.3, 3.2, 1.5"
+  },
+  {
+    "quote_id": "14",
+    "quote_text": "The last mile is always the least crowded.",
+    "source_type": "Rap Song",
+    "author": "Russ",
+    "source_title": "Wicked Race",
+    "is_pinned": "false",
+    "topic_ids": "1.1, 2.1, 3.1"
+  },
+  {
+    "quote_id": "15",
+    "quote_text": "Get out of your own way, trust me bro, that's so vital.",
+    "source_type": "Rap Song",
+    "author": "Russ",
+    "source_title": "Faith",
+    "is_pinned": "false",
+    "topic_ids": "1.4, 2.4, 2.2"
+  },
+  {
+    "quote_id": "16",
+    "quote_text": "I can't be controlled with program and presets.",
+    "source_type": "Rap Song",
+    "author": "Kanye West",
+    "source_title": "Jail",
+    "is_pinned": "false",
+    "topic_ids": "1.5, 4.3"
+  },
+  {
+    "quote_id": "17",
+    "quote_text": "We the only clique taking risk, touching live, f**k your hits... I been getting at these coins as I'm breaking down the brick. Make the jump to each level, Super Mario exists.",
+    "source_type": "Rap Song",
+    "author": "Pusha T",
+    "source_title": "Rock N Roll",
+    "is_pinned": "false",
+    "topic_ids": "1.1, 3.3, 2.1"
+  },
+  {
+    "quote_id": "18",
+    "quote_text": "Finding a way to stay out of the way.",
+    "source_type": "Rap Song",
+    "author": "Drake",
+    "source_title": "Falling Back",
+    "is_pinned": "false",
+    "topic_ids": "1.3, 2.5"
+  },
+  {
+    "quote_id": "19",
+    "quote_text": "Don't try to force a square peg in a round circle, that sh*t'll hurt you.",
+    "source_type": "Rap Song",
+    "author": "Nas",
+    "source_title": "10 Points",
+    "is_pinned": "false",
+    "topic_ids": "1.4, 2.5"
+  },
+  {
+    "quote_id": "20",
+    "quote_text": "If it costs you your peace, it is too expensive.",
+    "source_type": "Other Person",
+    "author": "Paulo Coelho",
+    "source_title": "BLANK",
+    "is_pinned": "false",
+    "topic_ids": "1.3, 2.5, 3.2"
+  },
+  {
+    "quote_id": "21",
+    "quote_text": "If you want to make change, it's going to take a minute.",
+    "source_type": "Rap Song",
+    "author": "Joey Bada$$",
+    "source_title": "TEMPTATION",
+    "is_pinned": "false",
+    "topic_ids": "3.1, 2.1"
+  },
+  {
+    "quote_id": "22",
+    "quote_text": "I strive for perfection; at the same time I'm accepting the fact that there'll never be nothing perfect about.",
+    "source_type": "Rap Song",
+    "author": "Royce da 5'9\"",
+    "source_title": "100",
+    "is_pinned": "false",
+    "topic_ids": "1.4, 2.2, 2.4"
+  },
+  {
+    "quote_id": "23",
+    "quote_text": "Stop dueling with the true thing, I do think. When you think too much you're removing what's moving.",
+    "source_type": "Rap Song",
+    "author": "André 3000",
+    "source_title": "By Design",
+    "is_pinned": "false",
+    "topic_ids": "2.5, 1.3, 1.4"
+  },
+  {
+    "quote_id": "24",
+    "quote_text": "I got now, later, and I got next.",
+    "source_type": "Rap Song",
+    "author": "G-Eazy",
+    "source_title": "Now & Later",
+    "is_pinned": "false",
+    "topic_ids": "1.1, 2.1"
+  },
+  {
+    "quote_id": "25",
+    "quote_text": "The stronger the assumption that the future will function as today does, the greater the gravitational force of the status quo.",
+    "source_type": "Book",
+    "author": "Pier Fornica",
+    "source_title": "BLANK",
+    "is_pinned": "false",
+    "topic_ids": "4.3, 1.1"
+  },
+  {
+    "quote_id": "26",
+    "quote_text": "One of the first boats I've seen is on Nautica Sweats.",
+    "source_type": "Rap Song",
+    "author": "Dave East",
+    "source_title": "Nautica Sweats",
+    "is_pinned": "false",
+    "topic_ids": "4.1, 4.2"
+  },
+  {
+    "quote_id": "27",
+    "quote_text": "Do you deceive yourself and let your ego swell? And disregard those who most need your help.",
+    "source_type": "Rap Song",
+    "author": "Nas and Damian Marley",
+    "source_title": "Strong Will Continue",
+    "is_pinned": "false",
+    "topic_ids": "1.4, 3.4, 4.2"
+  },
+  {
+    "quote_id": "28",
+    "quote_text": "It's a journey, some will get left behind, cause in life, you cannot press rewind.",
+    "source_type": "Rap Song",
+    "author": "Nas and Damian Marley",
+    "source_title": "Strong Will Continue",
+    "is_pinned": "false",
+    "topic_ids": "1.2, 2.1, 5.5"
+  },
+  {
+    "quote_id": "29",
+    "quote_text": "Warmheartedness could soon betray you, it proves fatal.",
+    "source_type": "Rap Song",
+    "author": "Nas",
+    "source_title": "Apostles",
+    "is_pinned": "false",
+    "topic_ids": "5.2, 2.1, 1.4"
+  },
+  {
+    "quote_id": "30",
+    "quote_text": "Time to make a statement, time to free my mind of limitations.",
+    "source_type": "Rap Song",
+    "author": "Stormzy",
+    "source_title": "This Is What I Mean",
+    "is_pinned": "false",
+    "topic_ids": "1.1, 2.2"
+  },
+  {
+    "quote_id": "31",
+    "quote_text": "Any man with the plan is precise with his life.",
+    "source_type": "Rap Song",
+    "author": "Gang Starr",
+    "source_title": "My Advice 2 You",
+    "is_pinned": "false",
+    "topic_ids": "1.1, 3.1"
+  },
+  {
+    "quote_id": "32",
+    "quote_text": "I do not know anybody who's winning who's taking the time to leave negative comments.",
+    "source_type": "Rap Song",
+    "author": "Connor Price",
+    "source_title": "EGOT",
+    "is_pinned": "false",
+    "topic_ids": "4.3, 1.3"
+  },
+  {
+    "quote_id": "33",
+    "quote_text": "Success is a chain reaction, I'm the f**king missing link.",
+    "source_type": "Rap Song",
+    "author": "Big Sean",
+    "source_title": "Lithuania",
+    "is_pinned": "false",
+    "topic_ids": "1.1, 1.5"
+  },
+  {
+    "quote_id": "34",
+    "quote_text": "Wasn't even dreaming this far, believe who you are. The sun doesn't even know it's a star.",
+    "source_type": "Rap Song",
+    "author": "Nas",
+    "source_title": "Get Light",
+    "is_pinned": "false",
+    "topic_ids": "1.5, 1.4, 1.1"
+  },
+  {
+    "quote_id": "35",
+    "quote_text": "Trying to go farther. I finally arrived and nobody's here.",
+    "source_type": "Rap Song",
+    "author": "Cordae",
+    "source_title": "C Carter",
+    "is_pinned": "false",
+    "topic_ids": "4.3, 1.2, 1.3"
+  },
+  {
+    "quote_id": "36",
+    "quote_text": "We all got a set of tools we gotta use to push through.",
+    "source_type": "Rap Song",
+    "author": "Nas",
+    "source_title": "Fever",
+    "is_pinned": "false",
+    "topic_ids": "2.1, 1.4"
+  },
+  {
+    "quote_id": "37",
+    "quote_text": "By the time you see the stars in the skies, they already burnt out.",
+    "source_type": "Rap Song",
+    "author": "Nas",
+    "source_title": "One a Man, Twice a Child",
+    "is_pinned": "false",
+    "topic_ids": "1.2, 4.3"
+  },
+  {
+    "quote_id": "38",
+    "quote_text": "Fear will make you reveal who you really are.",
+    "source_type": "Rap Song",
+    "author": "Nas",
+    "source_title": "Nasir",
+    "is_pinned": "false",
+    "topic_ids": "1.5, 1.4, 2.2"
+  },
+  {
+    "quote_id": "39",
+    "quote_text": "I'll have you time travelling, have your mind babbling. People trying to inherit the skill, so they asking me.",
+    "source_type": "Rap Song",
+    "author": "Nas",
+    "source_title": "BOB",
+    "is_pinned": "false",
+    "topic_ids": "1.2, 4.5"
+  },
+  {
+    "quote_id": "40",
+    "quote_text": "And I could give a f**k what category you place me. Long as when I'm pushing up daisies and gone, as long as you place me amongst one of them greats.",
+    "source_type": "Rap Song",
+    "author": "Eminem",
+    "source_title": "Never Enough",
+    "is_pinned": "false",
+    "topic_ids": "1.2, 1.5"
+  },
+  {
+    "quote_id": "41",
+    "quote_text": "Know what God said when He made the first rainbow? Just throw this at the end if I'm too late for the intro.",
+    "source_type": "Rap Song",
+    "author": "Kanye West",
+    "source_title": "Ultralight Beam",
+    "is_pinned": "false",
+    "topic_ids": "1.2, 1.5"
+  },
+  {
+    "quote_id": "42",
+    "quote_text": "I'm in my studio now, if you're looking for your future, look at who you're around. If they ain't pullin' their weight, they're gonna be pullin' you down.",
+    "source_type": "Rap Song",
+    "author": "Doneze, Keali'i",
+    "source_title": "HOW - Remix",
+    "is_pinned": "false",
+    "topic_ids": "5.2, 1.1"
+  },
+  {
+    "quote_id": "43",
+    "quote_text": "New vendettas attached, and we can't never get back. Now you can never relax. Think it's a game until they holding onto your brains and sh*t, do you?",
+    "source_type": "Rap Song",
+    "author": "Meek Mill",
+    "source_title": "Think It's A Game",
+    "is_pinned": "false",
+    "topic_ids": "4.1, 2.2, 2.5"
+  },
+  {
+    "quote_id": "44",
+    "quote_text": "You're unhappy, and I can see it when you cry.",
+    "source_type": "Rap Song",
+    "author": "Mase",
+    "source_title": "All I Ever Wanted",
+    "is_pinned": "false",
+    "topic_ids": "2.3, 1.4"
+  },
+  {
+    "quote_id": "45",
+    "quote_text": "When you give your time, you're giving a portion of your time that you're never getting back.",
+    "source_type": "Rap Song",
+    "author": "Fabolous",
+    "source_title": "Time",
+    "is_pinned": "false",
+    "topic_ids": "3.1, 3.2"
+  },
+  {
+    "quote_id": "46",
+    "quote_text": "The money comes, the money goes, but the time you never get it back.",
+    "source_type": "Rap Song",
+    "author": "Fabolous",
+    "source_title": "Time",
+    "is_pinned": "false",
+    "topic_ids": "3.2, 3.1"
+  },
+  {
+    "quote_id": "47",
+    "quote_text": "Because who I love can hurt me.",
+    "source_type": "Rap Song",
+    "author": "Big Sean",
+    "source_title": "Respect It",
+    "is_pinned": "false",
+    "topic_ids": "5.3, 2.3"
+  },
+  {
+    "quote_id": "48",
+    "quote_text": "Playing in the sand.",
+    "source_type": "Rap Song",
+    "author": "Lil Wayne",
+    "source_title": "Holy",
+    "is_pinned": "false",
+    "topic_ids": "3.1, 1.4"
+  },
+  {
+    "quote_id": "49",
+    "quote_text": "I didn't come this far to only come this far. You got to give yourself credit cause they definitely won't.",
+    "source_type": "Rap Song",
+    "author": "Russ",
+    "source_title": "Momentum",
+    "is_pinned": "false",
+    "topic_ids": "1.1, 2.1, 1.4"
+  },
+  {
+    "quote_id": "50",
+    "quote_text": "There are numerous ways you can choose to earn funds.",
+    "source_type": "Rap Song",
+    "author": "Mobb Deep",
+    "source_title": "Shook Ones",
+    "is_pinned": "false",
+    "topic_ids": "3.3, 4.4"
+  },
+  {
+    "quote_id": "51",
+    "quote_text": "I'm dying slow but the devil trying to rush me.",
+    "source_type": "Rap Song",
+    "author": "Lil Wayne",
+    "source_title": "Sucker For Pain",
+    "is_pinned": "false",
+    "topic_ids": "2.4, 2.2"
+  },
+  {
+    "quote_id": "52",
+    "quote_text": "If you got a problem with me, better walk around it.",
+    "source_type": "Rap Song",
+    "author": "Drake",
+    "source_title": "Lemon Pepper Freestyle",
+    "is_pinned": "false",
+    "topic_ids": "1.5, 1.3"
+  },
+  {
+    "quote_id": "53",
+    "quote_text": "My mansion seems bigger through my boy's eyes.",
+    "source_type": "Rap Song",
+    "author": "Drake",
+    "source_title": "Lemon Pepper Freestyle",
+    "is_pinned": "false",
+    "topic_ids": "5.1, 1.2"
+  },
+  {
+    "quote_id": "54",
+    "quote_text": "I went from going to school, to toting them tools and making a move. Said I would win, they said I would lose, sh*t. We're so confused, hope I don't make the news.",
+    "source_type": "Rap Song",
+    "author": "Meek Mill",
+    "source_title": "Left Hollywood",
+    "is_pinned": "false",
+    "topic_ids": "4.4, 4.1, 2.1"
+  },
+  {
+    "quote_id": "55",
+    "quote_text": "You know how we do, we do it for the people. And the struggles of the brothers and the folks, with lovers under dope, experiment to discover hopes.",
+    "source_type": "Rap Song",
+    "author": "Common",
+    "source_title": "The People",
+    "is_pinned": "false",
+    "topic_ids": "4.2, 4.1, 1.1"
+  },
+  {
+    "quote_id": "56",
+    "quote_text": "I see death around the corner.",
+    "source_type": "Rap Song",
+    "author": "2Pac",
+    "source_title": "BLANK",
+    "is_pinned": "false",
+    "topic_ids": "2.2, 2.4"
+  },
+  {
+    "quote_id": "57",
+    "quote_text": "People never get the flowers while they can still smell them.",
+    "source_type": "Rap Song",
+    "author": "Kanye West",
+    "source_title": "Big Brother",
+    "is_pinned": "false",
+    "topic_ids": "1.2, 4.3"
+  },
+  {
+    "quote_id": "58",
+    "quote_text": "Take a few step backs and look at yourself. Matter of fact, take yourself outside your body and then look at yourself. See how you're playing yourself.",
+    "source_type": "Rap Song",
+    "author": "Meek Mill",
+    "source_title": "Blue Notes",
+    "is_pinned": "false",
+    "topic_ids": "1.4, 2.4, 5.5"
+  },
+  {
+    "quote_id": "59",
+    "quote_text": "I don't never stress none of that sh*t from yesterday.",
+    "source_type": "Rap Song",
+    "author": "Rich Brian Guapdad 4000",
+    "source_title": "BALI",
+    "is_pinned": "false",
+    "topic_ids": "1.3, 2.5, 5.4"
+  },
+  {
+    "quote_id": "60",
+    "quote_text": "Cleaned out my closet, I got rid of all of my demons. If you learn one thing from my journey, n**a it's don't stop believing'. When this sht got so suffocating I could barely even keep breathin'. Wrote my wrongs all in this song, now I'd like to welcome y'all to my season.",
+    "source_type": "Rap Song",
+    "author": "Vic Mensa",
+    "source_title": "BLANK",
+    "is_pinned": "false",
+    "topic_ids": "2.4, 2.1, 1.1"
+  },
+  {
+    "quote_id": "61",
+    "quote_text": "Be humble, sit down.",
+    "source_type": "Rap Song",
+    "author": "Kendrick Lamar",
+    "source_title": "Humble.",
+    "is_pinned": "false",
+    "topic_ids": "1.4, 4.3"
+  },
+  {
+    "quote_id": "62",
+    "quote_text": "How you die thirty somethin' after banging all them years? Grammy nominated in the sauna shedding tears. All this money, power, fame and I can't make you reappear. But I don't wipe 'em though, we just embrace the only life we know. If it was me, I would tell you, \"N***a, live your life and grow.\" I'd tell you, \"Finish what we started, reach them heights, you know? And gas the V-12 to the pipe and smoke.\"",
+    "source_type": "Rap Song",
+    "author": "Nipsey Hussle",
+    "source_title": "Racks In The Middle",
+    "is_pinned": "false",
+    "topic_ids": "1.2, 2.1, 5.1, 2.3"
+  },
+  {
+    "quote_id": "63",
+    "quote_text": "You have to believe it when you cannot see it!",
+    "source_type": "Rap Song",
+    "author": "Meek Mill",
+    "source_title": "Wins & Losses",
+    "is_pinned": "false",
+    "topic_ids": "1.1, 2.1"
+  },
+  {
+    "quote_id": "64",
+    "quote_text": "Don't mind me, I'm living my dream.",
+    "source_type": "Rap Song",
+    "author": "DJ Khaled",
+    "source_title": "Sorry Not Sorry",
+    "is_pinned": "false",
+    "topic_ids": "1.1, 1.3"
+  },
+  {
+    "quote_id": "65",
+    "quote_text": "When you already won, what the f**k is a race?",
+    "source_type": "Rap Song",
+    "author": "Nicki Minaj",
+    "source_title": "Fraction",
+    "is_pinned": "false",
+    "topic_ids": "1.3, 3.2"
+  },
+  {
+    "quote_id": "66",
+    "quote_text": "Sometimes I question whether this sh*t matters, putting substance into something in a world so used to instant gratification.",
+    "source_type": "Rap Song",
+    "author": "J. Cole",
+    "source_title": "Let Go My Hands",
+    "is_pinned": "false",
+    "topic_ids": "4.3, 3.1"
+  },
+  {
+    "quote_id": "67",
+    "quote_text": "Take it from a street dude, you don't need to be a street dude. Get a lawyer, read your contract, and eat food.",
+    "source_type": "Rap Song",
+    "author": "Nas",
+    "source_title": "10 Points",
+    "is_pinned": "false",
+    "topic_ids": "4.4, 3.3"
+  },
+  {
+    "quote_id": "68",
+    "quote_text": "Don't get stuck in how you feel. Say, \"Jesus take the wheel.\" He knows the road that you need to take.",
+    "source_type": "Rap Song",
+    "author": "Kirk Franklin",
+    "source_title": "Wanna Be Happy?",
+    "is_pinned": "false",
+    "topic_ids": "2.5, 2.2"
+  },
+  {
+    "quote_id": "69",
+    "quote_text": "Maybe we should try and help somebody or be somebody, instead of being somebody that makes the news so everybody can tweet about it.",
+    "source_type": "Rap Song",
+    "author": "Drake",
+    "source_title": "6PM In New York",
+    "is_pinned": "false",
+    "topic_ids": "4.3, 1.2, 4.2"
+  },
+  {
+    "quote_id": "70",
+    "quote_text": "Jealousy's itch, but thank God I conquered that, cause if not I'd never be rich.",
+    "source_type": "Rap Song",
+    "author": "J. Cole",
+    "source_title": "Applying Pressure",
+    "is_pinned": "false",
+    "topic_ids": "3.4, 2.4, 2.1"
+  },
+  {
+    "quote_id": "71",
+    "quote_text": "Nobody gives you roses while you can smell them, so I picked from my own garden.",
+    "source_type": "Rap Song",
+    "author": "Nas",
+    "source_title": "EPMD 2",
+    "is_pinned": "false",
+    "topic_ids": "4.3, 1.3, 1.5"
+  },
+  {
+    "quote_id": "72",
+    "quote_text": "You can Richard Milli your left wrist.",
+    "source_type": "Rap Song",
+    "author": "BLANK",
+    "source_title": "BLANK",
+    "is_pinned": "false",
+    "topic_ids": "3.2, 4.3"
+  },
+  {
+    "quote_id": "73",
+    "quote_text": "Better have a strategy or you could be a statistic.",
+    "source_type": "Rap Song",
+    "author": "Kanye West",
+    "source_title": "Jesus Lord",
+    "is_pinned": "false",
+    "topic_ids": "4.1, 1.1, 4.4"
+  }
+]
