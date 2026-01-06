@@ -97,7 +97,9 @@ export default async function Home() {
       <div className="w-full">
         <div className="flex justify-between items-center mb-6 border-b border-neutral-800 pb-2">
           <h3 className="text-xl text-white font-semibold">The Holocron</h3>
-          <a href="/submit" className="text-zinc-400 text-sm hover:text-[var(--accent)] transition-colors">Contribute to the Archive</a>
+          <a href="/submit" className="bg-[var(--accent)] text-black font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-opacity text-sm">
+            Send a quote
+          </a>
         </div>
         <QuoteList />
       </div>
