@@ -76,14 +76,11 @@ model Quote {
   author      String
   sourceTitle String?
   sourceType  String?
-  topicIds    String   // Storing "1.1, 1.2" as string
-  isPinned    Boolean  @default(false) // Global pin vs User pin? 
-  // Requirement: "Refactor the Pin icon... toggling update user's favoriteQuoteIds" 
-  // So `isPinned` in JSON might have been global, but here we want user favorites.
-  // We can keep `isPinned` for "Featured" quotes if needed, or deprecate.
+  topicIds    String?  // Made optional as per new requirement
+  comments    String?  // New field
+  isPinned    Boolean  @default(false) 
   
   status      String   @default("PUBLISHED") // "PENDING" | "PUBLISHED" | "REJECTED"
-  // Note: JSON data is "PUBLISHED"
   
   suggestedByUserId String?
   suggestedBy       User?   @relation("UserSuggestions", fields: [suggestedByUserId], references: [id])

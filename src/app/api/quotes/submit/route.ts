@@ -24,8 +24,8 @@ export async function POST(req: Request) {
                 text: data.text,
                 author: data.author,
                 sourceTitle: data.sourceTitle || null,
-                sourceType: data.sourceType || null,
-                topicIds: data.topicIds,
+                topicIds: data.topicIds || null,
+                comments: data.comments || null,
                 status: "PENDING",
                 suggestedByUserId: user.id
             }

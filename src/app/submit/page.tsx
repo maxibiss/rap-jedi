@@ -11,14 +11,12 @@ export default function SubmitQuotePage() {
         text: string;
         author: string;
         sourceTitle: string;
-        sourceType: string;
-        topicIds: string;
+        comments: string;
     }>({
         text: '',
         author: '',
         sourceTitle: '',
-        sourceType: '',
-        topicIds: ''
+        comments: ''
     });
     const [loading, setLoading] = useState(false);
 
@@ -80,7 +78,7 @@ export default function SubmitQuotePage() {
                 </div>
 
                 <div>
-                    <label className="block text-sm font-medium text-zinc-400 mb-2">Author</label>
+                    <label className="block text-sm font-medium text-zinc-400 mb-2">Rapper or Author</label>
                     <input
                         required
                         type="text"
@@ -91,7 +89,7 @@ export default function SubmitQuotePage() {
                 </div>
 
                 <div>
-                    <label className="block text-sm font-medium text-zinc-400 mb-2">Source Title (Optional)</label>
+                    <label className="block text-sm font-medium text-zinc-400 mb-2">Song Title (Optional)</label>
                     <input
                         type="text"
                         className="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-white focus:outline-none focus:border-[var(--accent)]"
@@ -101,24 +99,12 @@ export default function SubmitQuotePage() {
                 </div>
 
                 <div>
-                    <label className="block text-sm font-medium text-zinc-400 mb-2">Source Type (Optional, e.g. Book, Movie)</label>
-                    <input
-                        type="text"
-                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-white focus:outline-none focus:border-[var(--accent)]"
-                        value={formData.sourceType}
-                        onChange={(e) => setFormData({ ...formData, sourceType: e.target.value })}
-                    />
-                </div>
-
-                <div>
-                    <label className="block text-sm font-medium text-zinc-400 mb-2">Topic IDs (comma separated, e.g. "1.1, 2.1")</label>
-                    <input
-                        required
-                        type="text"
-                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-white focus:outline-none focus:border-[var(--accent)]"
-                        placeholder="1.1, 2.1"
-                        value={formData.topicIds}
-                        onChange={(e) => setFormData({ ...formData, topicIds: e.target.value })}
+                    <label className="block text-sm font-medium text-zinc-400 mb-2">Comments (Optional)</label>
+                    <textarea
+                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-white focus:outline-none focus:border-[var(--accent)] h-24"
+                        value={formData.comments}
+                        onChange={(e) => setFormData({ ...formData, comments: e.target.value })}
+                        placeholder="Any extra context?"
                     />
                 </div>
 
