@@ -50,7 +50,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen p-6 md:p-12 lg:p-24 max-w-7xl mx-auto flex flex-col items-center relative">
-      <div className="absolute top-6 right-6 z-10">
+      <div className="absolute top-6 right-6 z-50">
         <AuthButton />
       </div>
       <HydrateQuotes quotes={mappedQuotes} />
