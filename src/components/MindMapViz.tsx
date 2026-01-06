@@ -19,6 +19,18 @@ export function MindMapViz() {
     const [isOpen, setIsOpen] = useState(false);
     const fgRef = useRef<any>(null);
 
+    // Empty State
+    if (quotes.length === 0) {
+        return (
+            <div className="w-full h-[500px] flex flex-col items-center justify-center bg-neutral-900/50 rounded-3xl border border-neutral-800 text-center p-6 mb-12">
+                <h2 className="text-xl font-bold text-white mb-2">The Galaxy is Quiet</h2>
+                <p className="text-zinc-500 max-w-md">
+                    "Welcome to the Galaxy. Add your first quote to see the stars align."
+                </p>
+            </div>
+        );
+    }
+
     // Helper to check if node is active
     const isNodeActive = (nodeId: string) => activeTopicIds.includes(nodeId);
 

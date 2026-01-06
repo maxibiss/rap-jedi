@@ -1,4 +1,5 @@
 import { MindMapViz } from '@/components/MindMapViz';
+import { ClientOnly } from '@/components/ClientOnly';
 import { QuoteList } from '@/components/QuoteList';
 import { PrismaClient } from '@prisma/client';
 import { HydrateQuotes } from '@/components/HydrateQuotes';
@@ -87,7 +88,9 @@ export default async function Home() {
         {quoteOfTheDay && <QuoteOfTheDay quote={quoteOfTheDay} />}
 
         <div className="w-full mt-8">
-          <MindMapViz />
+          <ClientOnly>
+            <MindMapViz />
+          </ClientOnly>
         </div>
       </header>
 

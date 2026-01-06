@@ -53,11 +53,12 @@ export default function SubmitQuotePage() {
                 alert('Quote submitted successfully! Pending approval.');
                 router.push('/');
             } else {
-                alert('Failed to submit quote.');
+                const data = await res.json();
+                alert(`Failed to submit quote: ${data.error || 'Unknown error'}`);
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error(error);
-            alert('An error occurred.');
+            alert(`An error occurred: ${error.message || 'Unknown error'}`);
         } finally {
             setLoading(false);
         }

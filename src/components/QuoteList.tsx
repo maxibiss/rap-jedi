@@ -27,6 +27,7 @@ export function QuoteList() {
     const [isRapOnly, setIsRapOnly] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(12);
+    const [isSourceDropdownOpen, setIsSourceDropdownOpen] = useState(false);
 
     useEffect(() => {
         if (session?.user?.email) {
@@ -113,7 +114,7 @@ export function QuoteList() {
 
     // Derive unique source types
     const sourceTypes = Array.from(new Set(allQuotes.map(q => q.sourceType))).filter(Boolean);
-    const [isSourceDropdownOpen, setIsSourceDropdownOpen] = useState(false);
+
 
     return (
         <div className="w-full">
