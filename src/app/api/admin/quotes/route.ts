@@ -13,13 +13,26 @@ export async function PUT(req: Request) {
     }
 
     try {
-        const { quoteId, action } = await req.json()
+        const { quoteId, action, data } = await req.json()
 
         if (!quoteId || !action) {
             return NextResponse.json({ error: "Missing fields" }, { status: 400 })
         }
 
-        if (action === "APPROVE") {
+        if (action === "UPDATE") {
+            if (!data) return NextResponse.json({ error: "Missing data" }, { status: 400 })
+            await prisma.quote.update({
+                where: { id: quoteId },
+                data: {
+                    text: data.text,
+                    author: data.author,
+                    sourceTitle: data.sourceTitle,
+                    sourceType: data.sourceType,
+                    topicIds: data.topicIds,
+                    comments: data.comments
+                }
+            })
+        } else if (action === "APPROVE") {
             await prisma.quote.update({
                 where: { id: quoteId },
                 data: { status: "PUBLISHED" }
@@ -29,7 +42,6 @@ export async function PUT(req: Request) {
                 where: { id: quoteId },
                 data: { status: "REJECTED" }
             })
-            // Or delete? Task says "deletes the quote or changes status to REJECTED"
         } else {
             return NextResponse.json({ error: "Invalid action" }, { status: 400 })
         }
