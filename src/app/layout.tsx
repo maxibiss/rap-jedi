@@ -15,6 +15,17 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Rap Jedi",
   description: "Decoding life wisdom and self-mastery from the greatest conscious rap lyrics.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
 };
 
 import { Providers } from "@/components/Providers";

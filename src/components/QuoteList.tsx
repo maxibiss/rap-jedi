@@ -26,7 +26,7 @@ export function QuoteList() {
     const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
     const [isRapOnly, setIsRapOnly] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(12);
+    const [itemsPerPage, setItemsPerPage] = useState(36);
     const [isSourceDropdownOpen, setIsSourceDropdownOpen] = useState(false);
 
     useEffect(() => {
