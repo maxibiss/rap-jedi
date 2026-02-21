@@ -197,7 +197,7 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
                 className="absolute top-0 left-0 -z-50 opacity-0 pointer-events-none bg-black border border-neutral-800 px-24 py-16 rounded-2xl flex flex-col justify-between overflow-hidden"
                 style={{ width: '1080px', height: '1080px' }}
             >
-                <div className="w-full flex justify-end relative z-20 mb-8">
+                <div className="w-full flex justify-end relative z-20 mb-8 pr-12">
                     <div className="flex items-center space-x-3 text-2xl text-white font-mono mix-blend-screen drop-shadow-md">
                         <span>RAP</span>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
