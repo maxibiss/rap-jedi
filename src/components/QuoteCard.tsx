@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/react';
 import { TOPIC_NAMES } from '@/data/topics';
 import { Share2 } from 'lucide-react';
 import { toPng } from 'html-to-image';
+import Image from 'next/image';
 
 interface QuoteCardProps {
     quote: Quote;
@@ -81,7 +82,19 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
                 backgroundRepeat: 'no-repeat'
             }}
         >
-            {!isSharing && (
+            {isSharing ? (
+                <div className="absolute top-4 right-4 z-20 flex items-center space-x-1 text-sm text-white font-mono mix-blend-screen drop-shadow-md">
+                    <span>RAP</span>
+                    <Image
+                        src="/android-chrome-192x192.png"
+                        alt="Rap Jedi Logo"
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                    />
+                    <span>JEDI.COM</span>
+                </div>
+            ) : (
                 <div className="absolute top-4 right-4 z-20 flex items-center gap-4">
                     <button
                         onClick={handleShare}
