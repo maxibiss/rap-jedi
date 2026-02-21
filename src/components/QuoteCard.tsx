@@ -1,6 +1,11 @@
+'use client';
+
+import { useRef, useState } from 'react';
 import { Quote } from '@/data/quotes';
 import { useSession } from 'next-auth/react';
 import { TOPIC_NAMES } from '@/data/topics';
+import { Share2 } from 'lucide-react';
+import { toPng } from 'html-to-image';
 
 interface QuoteCardProps {
     quote: Quote;
@@ -12,6 +17,45 @@ interface QuoteCardProps {
 
 export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, activeTopicIds = [] }: QuoteCardProps) {
     const { data: session } = useSession();
+    const cardRef = useRef<HTMLDivElement>(null);
+    const [isSharing, setIsSharing] = useState(false);
+
+    const handleShare = async () => {
+        if (!cardRef.current) return;
+
+        try {
+            setIsSharing(true);
+            // Laisser le temps à React de masquer les boutons et d'afficher le filigrane
+            await new Promise(resolve => setTimeout(resolve, 50));
+
+            const dataUrl = await toPng(cardRef.current, {
+                quality: 0.95,
+                cacheBust: true,
+                style: { transform: 'none' } // Évite des soucis d'échelle
+            });
+
+            if (navigator.share) {
+                const response = await fetch(dataUrl);
+                const blob = await response.blob();
+                const file = new File([blob], `rapjedi-quote.png`, { type: 'image/png' });
+
+                await navigator.share({
+                    title: 'Rap Jedi Quote',
+                    text: `"${quote.text}" - ${quote.author}`,
+                    files: [file]
+                });
+            } else {
+                const link = document.createElement('a');
+                link.download = `rapjedi-quote.png`;
+                link.href = dataUrl;
+                link.click();
+            }
+        } catch (error) {
+            console.error('Erreur lors du partage :', error);
+        } finally {
+            setIsSharing(false);
+        }
+    };
 
     const handlePinClick = async () => {
         if (!session) {
@@ -26,6 +70,7 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
 
     return (
         <div
+            ref={cardRef}
             className="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative group h-full flex flex-col justify-between overflow-hidden"
             style={{
                 backgroundImage: quote.sourceType
@@ -36,34 +81,43 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
                 backgroundRepeat: 'no-repeat'
             }}
         >
-            <div className="absolute top-4 right-4 z-20">
-                <button
-                    onClick={handlePinClick}
-                    className="flex items-center gap-2 group/btn"
-                    aria-label={isFavorited ? "Unpin quote" : "Pin quote"}
-                >
-                    {(quote.favoritesCount || 0) > 0 && (
-                        <span className="text-xs text-neutral-500 group-hover/btn:text-neutral-400">
-                            {quote.favoritesCount}
-                        </span>
-                    )}
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill={isFavorited ? "currentColor" : "none"}
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className={`transition-colors duration-300 ${isFavorited ? 'text-[var(--accent)]' : 'text-neutral-600 hover:text-neutral-400'}`}
+            {!isSharing && (
+                <div className="absolute top-4 right-4 z-20 flex items-center gap-4">
+                    <button
+                        onClick={handleShare}
+                        className="text-neutral-500 hover:text-white transition-colors duration-300"
+                        aria-label="Share quote"
                     >
-                        <line x1="12" y1="17" x2="12" y2="22"></line>
-                        <path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path>
-                    </svg>
-                </button>
-            </div>
+                        <Share2 className="w-5 h-5" />
+                    </button>
+                    <button
+                        onClick={handlePinClick}
+                        className="flex items-center gap-2 group/btn"
+                        aria-label={isFavorited ? "Unpin quote" : "Pin quote"}
+                    >
+                        {(quote.favoritesCount || 0) > 0 && (
+                            <span className="text-xs text-neutral-500 group-hover/btn:text-neutral-400">
+                                {quote.favoritesCount}
+                            </span>
+                        )}
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill={isFavorited ? "currentColor" : "none"}
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className={`transition-colors duration-300 ${isFavorited ? 'text-[var(--accent)]' : 'text-neutral-600 hover:text-neutral-400'}`}
+                        >
+                            <line x1="12" y1="17" x2="12" y2="22"></line>
+                            <path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path>
+                        </svg>
+                    </button>
+                </div>
+            )}
 
             <div className="relative z-10">
                 <div className="mb-4">
@@ -102,6 +156,14 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
                     </div>
                 </div>
             </div>
+
+            {isSharing && (
+                <div className="absolute bottom-4 right-4 z-20">
+                    <span className="text-neutral-400/80 text-sm font-mono tracking-widest mix-blend-screen drop-shadow-md">
+                        rapjedi.com
+                    </span>
+                </div>
+            )}
         </div>
     );
 }
