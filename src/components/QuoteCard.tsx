@@ -7,6 +7,8 @@ import { TOPIC_NAMES } from '@/data/topics';
 import { Share2 } from 'lucide-react';
 import { toPng } from 'html-to-image';
 
+let isHtmlToImagePreloaded = false;
+
 interface QuoteCardProps {
     quote: Quote;
     isFavorited?: boolean;
@@ -20,6 +22,23 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
     const cardRef = useRef<HTMLDivElement>(null);
     const [isSharing, setIsSharing] = useState(false);
 
+    const handlePointerEnter = () => {
+        if (!isHtmlToImagePreloaded && cardRef.current) {
+            isHtmlToImagePreloaded = true;
+            // Pré-charger le cache de html-to-image en tâche de fond
+            toPng(cardRef.current, { width: 10, height: 10 }).catch(() => {
+                isHtmlToImagePreloaded = false;
+            });
+        }
+    };
+
+    const fallbackDownload = (dataUrl: string) => {
+        const link = document.createElement('a');
+        link.download = `rapjedi-quote.png`;
+        link.href = dataUrl;
+        link.click();
+    };
+
     const handleShare = async () => {
         if (!cardRef.current) return;
 
@@ -30,28 +49,32 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
 
             const dataUrl = await toPng(cardRef.current, {
                 quality: 0.95,
-                cacheBust: true,
                 style: { transform: 'none' } // Évite des soucis d'échelle
             });
 
             if (navigator.share) {
-                const response = await fetch(dataUrl);
-                const blob = await response.blob();
-                const file = new File([blob], `rapjedi-quote.png`, { type: 'image/png' });
+                try {
+                    const response = await fetch(dataUrl);
+                    const blob = await response.blob();
+                    const file = new File([blob], `rapjedi-quote.png`, { type: 'image/png' });
 
-                await navigator.share({
-                    title: 'Rap Jedi Quote',
-                    text: `"${quote.text}" - ${quote.author}`,
-                    files: [file]
-                });
+                    await navigator.share({
+                        title: 'Rap Jedi Quote',
+                        text: `"${quote.text}" - ${quote.author}`,
+                        files: [file]
+                    });
+                } catch (shareError: any) {
+                    if (shareError.name === 'AbortError') {
+                        return; // Annulé par l'utilisateur
+                    }
+                    console.warn("Délai ou erreur avec Web Share API, fallback vers téléchargement:", shareError);
+                    fallbackDownload(dataUrl);
+                }
             } else {
-                const link = document.createElement('a');
-                link.download = `rapjedi-quote.png`;
-                link.href = dataUrl;
-                link.click();
+                fallbackDownload(dataUrl);
             }
         } catch (error) {
-            console.error('Erreur lors du partage :', error);
+            console.error('Erreur lors de la capture d\'image :', error);
         } finally {
             setIsSharing(false);
         }
@@ -71,6 +94,8 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
     return (
         <div
             ref={cardRef}
+            onPointerEnter={handlePointerEnter}
+            onTouchStart={handlePointerEnter}
             className="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative group h-full flex flex-col justify-between overflow-hidden"
             style={{
                 backgroundImage: quote.sourceType
