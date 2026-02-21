@@ -194,29 +194,31 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
             {/* --- CLONE CACHÉ POUR L'EXPORT --- */}
             <div
                 ref={exportRef}
-                className="absolute top-0 left-0 -z-50 opacity-0 pointer-events-none bg-black border border-neutral-800 p-12 rounded-2xl flex flex-col justify-between overflow-hidden"
+                className="absolute top-0 left-0 -z-50 opacity-0 pointer-events-none bg-black border border-neutral-800 px-24 py-16 rounded-2xl flex flex-col justify-between overflow-hidden"
                 style={{ width: '1080px', height: '1080px' }}
             >
-                <div className="absolute top-12 right-12 z-20 flex items-center space-x-3 text-2xl text-white font-mono mix-blend-screen drop-shadow-md">
-                    <span>RAP</span>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                        src="/android-chrome-192x192.png"
-                        alt="Rap Jedi Logo"
-                        width="48"
-                        height="48"
-                        className="object-contain"
-                        crossOrigin="anonymous"
-                    />
-                    <span>JEDI.COM</span>
+                <div className="w-full flex justify-end relative z-20 mb-8">
+                    <div className="flex items-center space-x-3 text-2xl text-white font-mono mix-blend-screen drop-shadow-md">
+                        <span>RAP</span>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                            src="/android-chrome-192x192.png"
+                            alt="Rap Jedi Logo"
+                            width="48"
+                            height="48"
+                            className="object-contain"
+                            crossOrigin="anonymous"
+                        />
+                        <span>JEDI.COM</span>
+                    </div>
                 </div>
 
-                <div className="relative z-10 pt-10 flex-grow flex flex-col justify-center">
+                <div className="relative z-10 pt-10 flex-grow flex flex-col justify-center items-center text-center">
                     <div className="mb-6">
                         <span className="text-2xl font-mono uppercase tracking-widest text-[var(--accent)] opacity-80">{quote.sourceType}</span>
                     </div>
                     <blockquote
-                        className="font-serif text-white tracking-wide"
+                        className="font-serif text-white tracking-wide text-center"
                         style={{
                             fontSize: quote.text.length < 50 ? '5.5rem' :
                                 quote.text.length < 100 ? '4.5rem' :
@@ -229,13 +231,13 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
                     </blockquote>
                 </div>
 
-                <div className="flex flex-col gap-6 mt-auto relative z-10">
-                    <div className="border-t-2 border-neutral-800/50 pt-8 flex justify-between items-end">
+                <div className="flex flex-col gap-6 mt-auto relative z-10 w-full">
+                    <div className="border-t-2 border-neutral-800/50 pt-8 flex flex-col items-center justify-center text-center gap-8">
                         <div>
                             <span className="text-white text-4xl font-semibold block mb-2">{quote.author}</span>
                             <span className="text-zinc-500 text-3xl italic">{quote.sourceTitle}</span>
                         </div>
-                        <div className="flex flex-wrap gap-4 justify-end max-w-[50%]">
+                        <div className="flex flex-wrap gap-4 justify-center">
                             {quote.topicIds.map((tid) => (
                                 <span
                                     key={tid}
