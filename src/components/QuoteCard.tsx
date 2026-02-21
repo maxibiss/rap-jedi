@@ -193,17 +193,17 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
             {/* --- CLONE CACHÉ POUR L'EXPORT --- */}
             <div
                 ref={exportRef}
-                className="absolute top-0 left-0 -z-50 opacity-0 pointer-events-none bg-black border border-neutral-800 p-6 rounded-2xl flex flex-col justify-between overflow-hidden"
-                style={{ width: '800px', height: '600px' }}
+                className="absolute top-0 left-0 -z-50 opacity-0 pointer-events-none bg-black border border-neutral-800 p-12 rounded-2xl flex flex-col justify-between overflow-hidden"
+                style={{ width: '1080px', height: '1080px' }}
             >
-                <div className="absolute top-4 right-4 z-20 flex items-center space-x-1 text-base text-white font-mono mix-blend-screen drop-shadow-md">
+                <div className="absolute top-12 right-12 z-20 flex items-center space-x-3 text-2xl text-white font-mono mix-blend-screen drop-shadow-md">
                     <span>RAP</span>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         src="/android-chrome-192x192.png"
                         alt="Rap Jedi Logo"
-                        width="32"
-                        height="32"
+                        width="48"
+                        height="48"
                         className="object-contain"
                         crossOrigin="anonymous"
                     />
@@ -211,33 +211,34 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
                 </div>
 
                 <div className="relative z-10 pt-10 flex-grow flex flex-col justify-center">
-                    <div className="mb-4">
-                        <span className="text-xl font-mono uppercase tracking-widest text-[var(--accent)] opacity-80">{quote.sourceType}</span>
+                    <div className="mb-6">
+                        <span className="text-2xl font-mono uppercase tracking-widest text-[var(--accent)] opacity-80">{quote.sourceType}</span>
                     </div>
                     <blockquote
-                        className="font-serif text-white leading-relaxed mb-6"
+                        className="font-serif text-white tracking-wide"
                         style={{
-                            fontSize: quote.text.length < 50 ? '4.5rem' :
-                                quote.text.length < 100 ? '3.5rem' :
-                                    quote.text.length < 200 ? '2.5rem' : '1.75rem',
-                            lineHeight: '1.2'
+                            fontSize: quote.text.length < 50 ? '5.5rem' :
+                                quote.text.length < 100 ? '4.5rem' :
+                                    quote.text.length < 200 ? '3.5rem' : '2.5rem',
+                            lineHeight: '1.15',
+                            marginBottom: '2rem'
                         }}
                     >
                         &quot;{quote.text}&quot;
                     </blockquote>
                 </div>
 
-                <div className="flex flex-col gap-4 mt-auto relative z-10">
-                    <div className="border-t border-neutral-800/50 pt-6 flex justify-between items-end">
+                <div className="flex flex-col gap-6 mt-auto relative z-10">
+                    <div className="border-t-2 border-neutral-800/50 pt-8 flex justify-between items-end">
                         <div>
-                            <span className="text-white text-2xl font-semibold block">{quote.author}</span>
-                            <span className="text-zinc-500 text-xl italic">{quote.sourceTitle}</span>
+                            <span className="text-white text-4xl font-semibold block mb-2">{quote.author}</span>
+                            <span className="text-zinc-500 text-3xl italic">{quote.sourceTitle}</span>
                         </div>
-                        <div className="flex flex-wrap gap-2 justify-end max-w-[50%]">
+                        <div className="flex flex-wrap gap-4 justify-end max-w-[50%]">
                             {quote.topicIds.map((tid) => (
                                 <span
                                     key={tid}
-                                    className="px-3 py-1.5 rounded text-sm border bg-neutral-800/80 text-zinc-400 border-neutral-700"
+                                    className="px-5 py-2.5 rounded-lg text-xl border-2 bg-neutral-800/80 text-zinc-300 border-neutral-700"
                                 >
                                     {TOPIC_NAMES[tid] || tid}
                                 </span>
