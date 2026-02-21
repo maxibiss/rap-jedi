@@ -66,7 +66,8 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
 
                     await navigator.share({
                         title: 'Rap Jedi Quote',
-                        text: `"${quote.text}" - ${quote.author}`,
+                        text: `A few words from ${quote.author}...`,
+                        url: 'https://rapjedi.com',
                         files: [file]
                     });
                 } catch (shareError) {
