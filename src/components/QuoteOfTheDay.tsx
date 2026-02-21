@@ -99,7 +99,7 @@ export function QuoteOfTheDay({ quote }: QuoteOfTheDayProps) {
                 </div>
 
                 <blockquote className="text-xl md:text-2xl font-serif text-white leading-relaxed mb-4">
-                    "{quote.text}"
+                    &quot;{quote.text}&quot;
                 </blockquote>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">

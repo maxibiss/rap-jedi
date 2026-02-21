@@ -121,7 +121,7 @@ export function AdminQuoteCard({ quote }: { quote: Quote }) {
     return (
         <div className="bg-neutral-900/50 border border-neutral-800 p-6 rounded-xl flex flex-col md:flex-row gap-6 justify-between items-start">
             <div className="w-full">
-                <p className="text-lg text-white mb-2">"{quote.text}"</p>
+                <p className="text-lg text-white mb-2">&quot;{quote.text}&quot;</p>
                 <div className="flex flex-wrap gap-4 text-sm text-zinc-500 mb-2">
                     <span>Author: <span className="text-zinc-300">{quote.author}</span></span>
                     <span>Source: {quote.sourceTitle || '-'}</span>

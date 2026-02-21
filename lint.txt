@@ -1,0 +1,123 @@
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\analyze_topics.js[24m[0m
+[0m  [2m1:12[22m  [31merror[39m  A `require()` style import is forbidden  [2m@typescript-eslint/no-require-imports[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\check_db.js[24m[0m
+[0m  [2m1:26[22m  [31merror[39m  A `require()` style import is forbidden  [2m@typescript-eslint/no-require-imports[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\check_quotes.js[24m[0m
+[0m  [2m2:26[22m  [31merror[39m  A `require()` style import is forbidden  [2m@typescript-eslint/no-require-imports[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\seed.js[24m[0m
+[0m  [2m1:26[22m  [31merror[39m  A `require()` style import is forbidden  [2m@typescript-eslint/no-require-imports[22m[0m
+[0m  [2m2:12[22m  [31merror[39m  A `require()` style import is forbidden  [2m@typescript-eslint/no-require-imports[22m[0m
+[0m  [2m3:14[22m  [31merror[39m  A `require()` style import is forbidden  [2m@typescript-eslint/no-require-imports[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\app\admin\AdminQuoteCard.tsx[24m[0m
+[0m  [2m124:56[22m  [31merror[39m  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  [2mreact/no-unescaped-entities[22m[0m
+[0m  [2m124:69[22m  [31merror[39m  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  [2mreact/no-unescaped-entities[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\app\api\quotes\submit\route.ts[24m[0m
+[0m  [2m36:21[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\app\api\user\favorites\route.ts[24m[0m
+[0m  [2m27:53[22m  [31merror[39m    Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m61:27[22m  [33mwarning[39m  'req' is defined but never used           [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m76:70[22m  [31merror[39m    Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m78:14[22m  [33mwarning[39m  'error' is defined but never used         [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\app\register\page.tsx[24m[0m
+[0m  [2m31:18[22m  [33mwarning[39m  'err' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\app\submit\page.tsx[24m[0m
+[0m  [2m57:25[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\auth.ts[24m[0m
+[0m  [2m48:34[22m  [33mwarning[39m  'user' is defined but never used          [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m63:38[22m  [31merror[39m    Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m65:38[22m  [31merror[39m    Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m72:39[22m  [31merror[39m    Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\components\ClientOnly.tsx[24m[0m
+[0m  [2m9:9[22m  [31merror[39m  Error: Calling setState synchronously within an effect can trigger cascading renders[0m
+[0m[0m
+[0mEffects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:[0m
+[0m* Update external systems with the latest state from React.[0m
+[0m* Subscribe for updates from some external system, calling setState in a callback function when external state changes.[0m
+[0m[0m
+[0mCalling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).[0m
+[0m[0m
+[0mC:\Code\bits_of_wisdom\src\components\ClientOnly.tsx:9:9[0m
+[0m   7 |[0m
+[0m   8 |     useEffect(() => {[0m
+[0m>  9 |         setHasMounted(true);[0m
+[0m     |         ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect[0m
+[0m  10 |     }, []);[0m
+[0m  11 |[0m
+[0m  12 |     if (!hasMounted) {  [2mreact-hooks/set-state-in-effect[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\components\HydrateQuotes.tsx[24m[0m
+[0m  [2m3:10[22m  [33mwarning[39m  'useEffect' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\components\MindMapViz.tsx[24m[0m
+[0m   [2m20:26[22m  [31merror[39m  Unexpected any. Specify a different type                                                                                      [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m   [2m28:21[22m  [31merror[39m  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                               [2mreact/no-unescaped-entities[22m[0m
+[0m   [2m28:89[22m  [31merror[39m  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                               [2mreact/no-unescaped-entities[22m[0m
+[0m   [2m38:23[22m  [31merror[39m  React Hook "useMemo" is called conditionally. React Hooks must be called in the exact same order in every component render    [2mreact-hooks/rules-of-hooks[22m[0m
+[0m   [2m40:5[22m   [31merror[39m  React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render  [2mreact-hooks/rules-of-hooks[22m[0m
+[0m   [2m96:35[22m  [31merror[39m  Unexpected any. Specify a different type                                                                                      [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m   [2m97:33[22m  [31merror[39m  Unexpected any. Specify a different type                                                                                      [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m100:37[22m  [31merror[39m  Unexpected any. Specify a different type                                                                                      [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m114:42[22m  [31merror[39m  Unexpected any. Specify a different type                                                                                      [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\components\QuoteCard.tsx[24m[0m
+[0m  [2m67:38[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\components\QuoteList.tsx[24m[0m
+[0m   [2m43:13[22m  [31merror[39m    Error: Calling setState synchronously within an effect can trigger cascading renders[0m
+[0m[0m
+[0mEffects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:[0m
+[0m* Update external systems with the latest state from React.[0m
+[0m* Subscribe for updates from some external system, calling setState in a callback function when external state changes.[0m
+[0m[0m
+[0mCalling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).[0m
+[0m[0m
+[0mC:\Code\bits_of_wisdom\src\components\QuoteList.tsx:43:13[0m
+[0m  41 |                 .catch(err => console.error("Failed to fetch favorites", err));[0m
+[0m  42 |         } else {[0m
+[0m> 43 |             setFavorites([]);[0m
+[0m     |             ^^^^^^^^^^^^ Avoid calling setState() directly within an effect[0m
+[0m  44 |         }[0m
+[0m  45 |     }, [session]);[0m
+[0m  46 |                                                                [2mreact-hooks/set-state-in-effect[22m[0m
+[0m   [2m98:9[22m   [31merror[39m    Error: Calling setState synchronously within an effect can trigger cascading renders[0m
+[0m[0m
+[0mEffects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:[0m
+[0m* Update external systems with the latest state from React.[0m
+[0m* Subscribe for updates from some external system, calling setState in a callback function when external state changes.[0m
+[0m[0m
+[0mCalling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).[0m
+[0m[0m
+[0mC:\Code\bits_of_wisdom\src\components\QuoteList.tsx:98:9[0m
+[0m   96 |     // Reset page when filters change[0m
+[0m   97 |     useEffect(() => {[0m
+[0m>  98 |         setCurrentPage(1);[0m
+[0m      |         ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect[0m
+[0m   99 |     }, [filteredQuotes, showFavoritesOnly, isRapOnly, searchQuery, activeSourceTypes]);[0m
+[0m  100 |[0m
+[0m  101 |     if (filteredQuotes.length === 0) {  [2mreact-hooks/set-state-in-effect[22m[0m
+[0m  [2m261:75[22m  [33mwarning[39m  '_' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m261:78[22m  [33mwarning[39m  'i' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\components\QuoteOfTheDay.tsx[24m[0m
+[0m  [2m102:21[22m  [31merror[39m  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  [2mreact/no-unescaped-entities[22m[0m
+[0m  [2m102:34[22m  [31merror[39m  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  [2mreact/no-unescaped-entities[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\data\quotes.ts[24m[0m
+[0m  [2m14:50[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Code\bits_of_wisdom\src\next-auth.d.ts[24m[0m
+[0m  [2m1:8[22m  [33mwarning[39m  'NextAuth' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[31m[1m✖ 39 problems (31 errors, 8 warnings)[22m[39m[0m
+[0m[31m[1m[22m[39m[0m

@@ -20,13 +20,18 @@ interface QuoteCardProps {
 export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, activeTopicIds = [] }: QuoteCardProps) {
     const { data: session } = useSession();
     const cardRef = useRef<HTMLDivElement>(null);
+    const exportRef = useRef<HTMLDivElement>(null);
     const [isSharing, setIsSharing] = useState(false);
 
     const handlePointerEnter = () => {
-        if (!isHtmlToImagePreloaded && cardRef.current) {
+        if (!isHtmlToImagePreloaded && exportRef.current) {
             isHtmlToImagePreloaded = true;
-            // Pré-charger le cache de html-to-image en tâche de fond
-            toPng(cardRef.current, { width: 10, height: 10 }).catch(() => {
+            // Pré-charger le cache de html-to-image en tâche de fond sur l'élément d'export
+            toPng(exportRef.current, {
+                width: 10,
+                height: 10,
+                style: { opacity: '1' }
+            }).catch(() => {
                 isHtmlToImagePreloaded = false;
             });
         }
@@ -40,16 +45,17 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
     };
 
     const handleShare = async () => {
-        if (!cardRef.current) return;
+        if (!exportRef.current) return;
 
         try {
             setIsSharing(true);
-            // Laisser le temps à React de masquer les boutons et d'afficher le filigrane
+
+            // Un petit délai au cas où
             await new Promise(resolve => setTimeout(resolve, 50));
 
-            const dataUrl = await toPng(cardRef.current, {
+            const dataUrl = await toPng(exportRef.current, {
                 quality: 0.95,
-                style: { transform: 'none' } // Évite des soucis d'échelle
+                style: { transform: 'none', opacity: '1' } // Force la visibilité pour l'export
             });
 
             if (navigator.share) {
@@ -63,8 +69,8 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
                         text: `"${quote.text}" - ${quote.author}`,
                         files: [file]
                     });
-                } catch (shareError: any) {
-                    if (shareError.name === 'AbortError') {
+                } catch (shareError) {
+                    if (shareError instanceof Error && shareError.name === 'AbortError') {
                         return; // Annulé par l'utilisateur
                     }
                     console.warn("Délai ou erreur avec Web Share API, fallback vers téléchargement:", shareError);
@@ -92,33 +98,23 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
     };
 
     return (
-        <div
-            ref={cardRef}
-            onPointerEnter={handlePointerEnter}
-            onTouchStart={handlePointerEnter}
-            className="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative group h-full flex flex-col justify-between overflow-hidden"
-            style={{
-                backgroundImage: quote.sourceType
-                    ? `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('/backgrounds/${quote.sourceType.toLowerCase()}.jpg')`
-                    : undefined,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-            }}
-        >
-            {isSharing ? (
-                <div className="absolute top-4 right-4 z-20 flex items-center space-x-1 text-sm text-white font-mono mix-blend-screen drop-shadow-md">
-                    <span>RAP</span>
-                    <img
-                        src="/android-chrome-192x192.png"
-                        alt="Rap Jedi Logo"
-                        width="24"
-                        height="24"
-                        className="object-contain"
-                    />
-                    <span>JEDI.COM</span>
-                </div>
-            ) : (
+        <div className="relative h-full">
+            {/* --- CARTE PRINCIPALE INTERACTIVE --- */}
+            <div
+                ref={cardRef}
+                onPointerEnter={handlePointerEnter}
+                onTouchStart={handlePointerEnter}
+                className="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative group h-full flex flex-col justify-between overflow-hidden"
+                style={{
+                    backgroundImage: quote.sourceType
+                        ? `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('/backgrounds/${quote.sourceType.toLowerCase()}.jpg')`
+                        : undefined,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                }}
+            >
+                {/* Boutons interactifs (toujours affichés en vue normale) */}
                 <div className="absolute top-4 right-4 z-20 flex items-center gap-4">
                     <button
                         onClick={handleShare}
@@ -154,42 +150,99 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
                         </svg>
                     </button>
                 </div>
-            )}
 
-            <div className="relative z-10">
-                <div className="mb-4">
-                    <span className="text-xs font-mono uppercase tracking-widest text-[var(--accent)] opacity-80">{quote.sourceType}</span>
-                </div>
-
-                <blockquote className="text-xl md:text-2xl font-serif text-white leading-relaxed mb-6">
-                    "{quote.text}"
-                </blockquote>
-            </div>
-
-            <div className="flex flex-col gap-4 mt-auto relative z-10">
-                <div className="border-t border-neutral-800/50 pt-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                    <div>
-                        <span className="text-white font-semibold block">{quote.author}</span>
-                        <span className="text-zinc-500 text-sm italic">{quote.sourceTitle}</span>
+                <div className="relative z-10">
+                    <div className="mb-4">
+                        <span className="text-xs font-mono uppercase tracking-widest text-[var(--accent)] opacity-80">{quote.sourceType}</span>
                     </div>
 
-                    <div className="flex flex-wrap gap-2">
-                        {quote.topicIds.map((tid) => {
-                            const isActive = activeTopicIds.includes(tid);
-                            return (
+                    <blockquote className="text-xl md:text-2xl font-serif text-white leading-relaxed mb-6">
+                        &quot;{quote.text}&quot;
+                    </blockquote>
+                </div>
+
+                <div className="flex flex-col gap-4 mt-auto relative z-10">
+                    <div className="border-t border-neutral-800/50 pt-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                        <div>
+                            <span className="text-white font-semibold block">{quote.author}</span>
+                            <span className="text-zinc-500 text-sm italic">{quote.sourceTitle}</span>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2">
+                            {quote.topicIds.map((tid) => {
+                                const isActive = activeTopicIds.includes(tid);
+                                return (
+                                    <span
+                                        key={tid}
+                                        onClick={() => onTopicClick?.(tid)}
+                                        className={`px-2 py-1 rounded text-xs border transition-colors cursor-pointer backdrop-blur-sm
+                                        ${isActive
+                                                ? 'bg-[var(--accent)]/10 text-[var(--accent)] border-[var(--accent)]'
+                                                : 'bg-neutral-800/80 text-zinc-400 border-neutral-700 hover:border-[var(--accent)] hover:text-[var(--accent)]'
+                                            }`}
+                                    >
+                                        {TOPIC_NAMES[tid] || tid}
+                                    </span>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* --- CLONE CACHÉ POUR L'EXPORT --- */}
+            <div
+                ref={exportRef}
+                className="absolute top-0 left-0 -z-50 opacity-0 pointer-events-none bg-black border border-neutral-800 p-6 rounded-2xl flex flex-col justify-between overflow-hidden"
+                style={{ width: '800px', height: '600px' }}
+            >
+                <div className="absolute top-4 right-4 z-20 flex items-center space-x-1 text-base text-white font-mono mix-blend-screen drop-shadow-md">
+                    <span>RAP</span>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                        src="/android-chrome-192x192.png"
+                        alt="Rap Jedi Logo"
+                        width="32"
+                        height="32"
+                        className="object-contain"
+                        crossOrigin="anonymous"
+                    />
+                    <span>JEDI.COM</span>
+                </div>
+
+                <div className="relative z-10 pt-10 flex-grow flex flex-col justify-center">
+                    <div className="mb-4">
+                        <span className="text-xl font-mono uppercase tracking-widest text-[var(--accent)] opacity-80">{quote.sourceType}</span>
+                    </div>
+                    <blockquote
+                        className="font-serif text-white leading-relaxed mb-6"
+                        style={{
+                            fontSize: quote.text.length < 50 ? '4.5rem' :
+                                quote.text.length < 100 ? '3.5rem' :
+                                    quote.text.length < 200 ? '2.5rem' : '1.75rem',
+                            lineHeight: '1.2'
+                        }}
+                    >
+                        &quot;{quote.text}&quot;
+                    </blockquote>
+                </div>
+
+                <div className="flex flex-col gap-4 mt-auto relative z-10">
+                    <div className="border-t border-neutral-800/50 pt-6 flex justify-between items-end">
+                        <div>
+                            <span className="text-white text-2xl font-semibold block">{quote.author}</span>
+                            <span className="text-zinc-500 text-xl italic">{quote.sourceTitle}</span>
+                        </div>
+                        <div className="flex flex-wrap gap-2 justify-end max-w-[50%]">
+                            {quote.topicIds.map((tid) => (
                                 <span
                                     key={tid}
-                                    onClick={() => onTopicClick?.(tid)}
-                                    className={`px-2 py-1 rounded text-xs border transition-colors cursor-pointer backdrop-blur-sm
-                                        ${isActive
-                                            ? 'bg-[var(--accent)]/10 text-[var(--accent)] border-[var(--accent)]'
-                                            : 'bg-neutral-800/80 text-zinc-400 border-neutral-700 hover:border-[var(--accent)] hover:text-[var(--accent)]'
-                                        }`}
+                                    className="px-3 py-1.5 rounded text-sm border bg-neutral-800/80 text-zinc-400 border-neutral-700"
                                 >
                                     {TOPIC_NAMES[tid] || tid}
                                 </span>
-                            );
-                        })}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
