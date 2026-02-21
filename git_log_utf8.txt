@@ -1,0 +1,15 @@
+﻿283e413 fix: bulletproof og image rendering as static png
+d3629fe fix: production absolute URL for OG image
+9d49aff correct cards
+9ccdac4 feat: added social sharing logic and card components
+d1b1890 favicon and number of quotes per page
+b18fab6 change send a quote button
+40d3cb3 fix non responsive sign up buttons
+1e08224 add edit quote for admin
+e56aa7c change submit quote form
+ab92723 fix submit quote error v2
+71b0a5a fix submit quote error
+bf0f848 fix: add prisma generate to postinstall
+10b7620 Switch to Postgres and sync database
+0b7a028 Initial commit: Rap Jedi Production Build
+879e5f4 Initial commit from Create Next App
