@@ -65,8 +65,6 @@ export function QuoteCard({ quote, isFavorited, onToggleFavorite, onTopicClick, 
                     const file = new File([blob], `rapjedi-quote.png`, { type: 'image/png' });
 
                     await navigator.share({
-                        title: 'Rap Jedi Quote',
-                        text: `A few words from ${quote.author}...\n\nFind more on https://rapjedi.com`,
                         files: [file]
                     });
                 } catch (shareError) {
